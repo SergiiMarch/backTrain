@@ -1,0 +1,28 @@
+.box {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+button {
+  color: blue;
+  background-color: white;
+}
+
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+.box input[type="text"]::placeholder {
+  color: rgb(89, 81, 159);
+}
+
+.box input[type="text"]:focus {
+  background-color: rgb(229, 225, 233);
+}
+
+.box input[type="text"] {
+  width: 200px;
+  height: 25px;
+}
