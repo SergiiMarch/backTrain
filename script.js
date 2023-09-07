@@ -8,8 +8,13 @@ function onSubmit(e) {
 
   const login = formEl.elements.login.value;
 
-  fetch(`https://api.github.com/users/${login}`)
-    .then((res) => res.json())
+  fstchUser(login)
     .then((data) => console.log(data))
     .catch((error) => console.error(error));
+}
+
+function fstchUser(login) {
+  return fetch(`https://api.github.com/users/${login}`).then((res) =>
+    res.json()
+  );
 }
