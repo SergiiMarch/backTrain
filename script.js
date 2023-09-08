@@ -9,10 +9,13 @@ function onSubmit(e) {
 
   const login = formEl.elements.login.value;
 
-  fitchUser(login)
-    .then(showProfile)
-    .catch((error) => console.error(error));
+  fitchUser(login).then(showProfile).catch(showError);
   formEl.reset();
+}
+
+function showError(error) {
+  console.log(error);
+  profileConteiner.innerHTML = "Упс!Щось пішло не так";
 }
 
 function showProfile({
@@ -45,9 +48,12 @@ function showProfile({
 }
 
 function fitchUser(login) {
-  return fetch(`https://api.github.com/users/${login}`).then((response) =>
-    response.json()
-  );
+  return fetch(`https://api.github.com/users/${login}`).then((response) => {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    response.json();
+  });
 }
 // avatar_url;
 // company;
