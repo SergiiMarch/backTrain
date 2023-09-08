@@ -12,10 +12,36 @@ function onSubmit(e) {
   fitchUser(login)
     .then(showProfile)
     .catch((error) => console.error(error));
+  formEl.reset();
 }
 
-function showProfile(data) {
-  console.log(data);
+function showProfile({
+  name,
+  repos_url,
+  followers,
+  login,
+  public_repos,
+  avatar_url,
+}) {
+  const template = ` <div class="profile">
+  <div class="content">
+  <img
+  src="${avatar_url}"
+  class="avatar"
+  alt="avatar"
+  width="120px"
+  height="120px"
+/>
+    <h1 class="name">${name}</h1>
+    <p class="repurl">${repos_url}</p>
+    <ul class="stats">
+      <li>Folowers:<span>${followers}</span></li>
+      <li>login:<span>${login}</span></li>
+      <li>Repos:<span>${public_repos}</span></li>
+    </ul>
+  </div>
+</div>`;
+  profileConteiner.innerHTML = template;
 }
 
 function fitchUser(login) {
