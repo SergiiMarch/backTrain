@@ -32,7 +32,7 @@ function showProfile({
   width="120px"
   height="120px"
 />
-    <h1 class="name">${name}</h1>
+   ${name ? ` <h1 class="name">${name}</h1>` : ""} 
     <p class="repurl">${repos_url}</p>
     <ul class="stats">
       <li>Folowers:<span>${followers}</span></li>
