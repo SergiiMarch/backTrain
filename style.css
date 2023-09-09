@@ -26,3 +26,25 @@ button:hover {
   width: 200px;
   height: 25px;
 }
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  margin-top: 5px;
+}
+
+.stats {
+  list-style: none;
+}
+
+.avatar {
+  /* Стилі для зображення */
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+}

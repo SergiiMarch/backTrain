@@ -34,8 +34,8 @@ function showProfile({
   src="${avatar_url}"
   class="avatar"
   alt="avatar"
-  width="120px"
-  height="120px"
+  width="180px"
+  height="180px"
 />
 ${name ? `<h1 class="name">${name}</h1>` : ""}
     <p class="repurl">${repos_url}</p>
