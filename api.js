@@ -6,3 +6,5 @@ export function fetchUser(login) {
     return response.json();
   });
 }
+
+//доробити код (бібліотеки + обробник подій)
